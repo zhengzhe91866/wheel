@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    padding: 30px;
+    background-color: #f5f5f5;
+    font-family: Arial, "Microsoft JhengHei", sans-serif;
+}
+
+.main-container {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.result-area {
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #d9534f;
+}
+
+.wheel-area {
+    position: relative;
+    width: 520px;
+    height: 520px;
+    margin: 0 auto 40px auto;
+}
+
+#wheelCanvas {
+    display: block;
+    margin: 0 auto;
+}
+
+.pointer {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    transform: translateX(-50%);
+    border-left: 22px solid transparent;
+    border-right: 22px solid transparent;
+    border-top: 55px solid #e53935;
+    z-index: 20;
+}
+
+.spin-button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 105px;
+    height: 105px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 6px solid white;
+    background-color: #333333;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 30;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.spin-button:hover {
+    background-color: #555555;
+}
+
+.spin-button:disabled {
+    background-color: #999999;
+    cursor: default;
+}
+
+.manage-area {
+    padding: 25px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.manage-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.add-area {
+    margin-bottom: 25px;
+}
+
+.txt-new {
+    width: 350px;
+    padding: 8px 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.btn-add {
+    margin-left: 5px;
+    padding: 9px 22px;
+    border: 0;
+    border-radius: 4px;
+    background-color: #337ab7;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn-add:hover {
+    background-color: #286090;
+}
+
+.option-grid {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.option-grid th {
+    padding: 10px;
+    background-color: #333333;
+    color: white;
+    text-align: center;
+}
+
+.option-grid td {
+    padding: 10px;
+    border-bottom: 1px solid #dddddd;
+    text-align: center;
+}
+
+.option-grid input[type=text] {
+    padding: 6px;
+    font-size: 15px;
+}
+
+.option-grid a {
+    margin: 0 5px;
+    color: #337ab7;
+    text-decoration: none;
+}
+
+.option-grid a:hover {
+    text-decoration: underline;
+}
+
+.empty-text {
+    padding: 20px;
+    color: #888888;
+}

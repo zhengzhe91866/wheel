@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幸運輪盤</title>
+    <link rel="stylesheet" href="Wheel.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="result-area">
+            <span id="resultText">點擊輪盤中央開始</span>
+        </div>
+
+        <div class="wheel-area">
+            <div class="pointer"></div>
+            <canvas id="wheelCanvas" width="500" height="500"></canvas>
+            <button id="btnSpin" type="button" class="spin-button">
+                開始
+            </button>
+
+        </div>
+
+        <div class="manage-area">
+            <div class="manage-title">
+                輪盤選項管理
+            </div>
+
+            <div class="add-area">
+                <input id="txtNewOption" type="text" class="txt-new" maxlength="50" placeholder="請輸入新的輪盤選項">
+                <button id="btnAdd" type="button" class="btn-add">
+                    新增
+                </button>
+            </div>
+
+            <table class="option-grid">
+                <thead>
+                    <tr>
+                        <th>編號</th>
+                        <th>輪盤內容</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="optionTableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="Wheel.js"></script>
+</body>
+</html>
