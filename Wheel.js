@@ -21,33 +21,45 @@ async function init() {
     drawWheel();
 }
 
-// 讀取資料
+function normalizeOptions(data) {
+    return data.map(function (item) {
+        return {
+            id: item.id !== undefined ? item.id : item.ID,
+            name: item.name !== undefined ? item.name : item.OptionName
+        };
+    });
+}
+
 async function loadOptions() {
     const savedData = localStorage.getItem(STORAGE_KEY);
 
     if (savedData) {
         try {
-            options = JSON.parse(savedData);
+            options = normalizeOptions(JSON.parse(savedData));
+            saveOptions();
             return;
         }
         catch (e) {
             console.error("localStorage JSON 錯誤：", e);
+            localStorage.removeItem(STORAGE_KEY);
         }
     }
 
     try {
         const response = await fetch("Options.json");
-
+		
         if (!response.ok) {
-            throw new Error("JSON 讀取失敗");
+            throw new Error("JSON 讀取失敗：" + response.status);
         }
 
-        options = await response.json();
+        const data = await response.json();
+        options = normalizeOptions(data);
+
         saveOptions();
     }
     catch (e) {
-        console.error(e);
-        saveOptions();
+        console.error("Options.json 載入失敗：", e);
+        options = [];
     }
 }
 
