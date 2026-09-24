@@ -7,6 +7,7 @@ body {
 
 .main-container {
     width: 900px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -28,6 +29,8 @@ body {
 
 #wheelCanvas {
     display: block;
+    width: 500px;
+    height: 500px;
     margin: 0 auto;
 }
 
@@ -85,10 +88,14 @@ body {
 }
 
 .add-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     margin-bottom: 25px;
 }
 
 .txt-new {
+    box-sizing: border-box;
     width: 350px;
     padding: 8px 10px;
     border: 1px solid #cccccc;
@@ -96,8 +103,12 @@ body {
     font-size: 16px;
 }
 
+.txt-new:focus {
+    outline: none;
+    border-color: #337ab7;
+}
+
 .btn-add {
-    margin-left: 5px;
     padding: 9px 22px;
     border: 0;
     border-radius: 4px;
@@ -114,6 +125,7 @@ body {
 .option-grid {
     width: 100%;
     border-collapse: collapse;
+    background-color: white;
 }
 
 .option-grid th {
@@ -127,24 +139,156 @@ body {
     padding: 10px;
     border-bottom: 1px solid #dddddd;
     text-align: center;
+    vertical-align: middle;
 }
 
-.option-grid input[type=text] {
-    padding: 6px;
+.option-grid tbody tr:hover {
+    background-color: #f8f8f8;
+}
+
+.edit-input {
+    box-sizing: border-box;
+    width: 90%;
+    padding: 7px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
     font-size: 15px;
 }
 
-.option-grid a {
-    margin: 0 5px;
-    color: #337ab7;
-    text-decoration: none;
+.edit-input:focus {
+    outline: none;
+    border-color: #337ab7;
 }
 
-.option-grid a:hover {
-    text-decoration: underline;
+.btn-edit,
+.btn-save,
+.btn-cancel,
+.btn-delete {
+    margin: 0 3px;
+    padding: 6px 12px;
+    border: 0;
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
 }
 
-.empty-text {
-    padding: 20px;
+.btn-edit {
+    background-color: #337ab7;
+}
+
+.btn-edit:hover {
+    background-color: #286090;
+}
+
+.btn-save {
+    background-color: #5cb85c;
+}
+
+.btn-save:hover {
+    background-color: #449d44;
+}
+
+.btn-cancel {
+    background-color: #777777;
+}
+
+.btn-cancel:hover {
+    background-color: #555555;
+}
+
+.btn-delete {
+    background-color: #d9534f;
+}
+
+.btn-delete:hover {
+    background-color: #c9302c;
+}
+
+.empty-row {
+    padding: 20px !important;
     color: #888888;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .main-container {
+        width: 100%;
+    }
+
+    .result-area {
+        height: 60px;
+        line-height: 60px;
+        font-size: 22px;
+    }
+
+    .wheel-area {
+        width: 340px;
+        height: 340px;
+        margin-bottom: 30px;
+    }
+
+    #wheelCanvas {
+        width: 340px;
+        height: 340px;
+    }
+
+    .pointer {
+        top: -6px;
+        border-left-width: 16px;
+        border-right-width: 16px;
+        border-top-width: 40px;
+    }
+
+    .spin-button {
+        width: 80px;
+        height: 80px;
+        border-width: 4px;
+        font-size: 16px;
+    }
+
+    .manage-area {
+        padding: 15px;
+    }
+
+    .manage-title {
+        font-size: 20px;
+    }
+
+    .add-area {
+        display: block;
+    }
+
+    .txt-new {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .btn-add {
+        width: 100%;
+    }
+
+    .option-grid th,
+    .option-grid td {
+        padding: 8px 5px;
+        font-size: 14px;
+    }
+
+    .edit-input {
+        width: 100%;
+    }
+
+    .btn-edit,
+    .btn-save,
+    .btn-cancel,
+    .btn-delete {
+        margin: 2px;
+        padding: 5px 8px;
+        font-size: 13px;
+    }
 }
